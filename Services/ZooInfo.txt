@@ -1,0 +1,6 @@
+Chiken,3,40,5,Black
+Stork,25,120,15,Black
+Tiger,Amur,29.10.2020 0:00:00,200,100,Red
+Wolf,Forest,29.10.2020 0:00:00,140,34,White,False
+Dog,Sharik,Ovcharka,True,Brown,29.10.2020 0:00:00,80,26,Red,False
+Cat,Murka,Siam,True,White,29.10.2020 0:00:00,56,6,Green,True
