@@ -1,7 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
+//Неймспейс должен совпадать с путём к папке
 namespace Zoo.Animals
 {
     public class Dog : IPet
@@ -53,10 +52,11 @@ namespace Zoo.Animals
 
         public string PrintInfo()
         {
+            //лучше использовать тернарный оператор
             string a = "Тренировки нет";
             if ( Training== true)
                 a = $"Тренирована";
-
+            //лучше использовать тернарный оператор
             string b = "вакцинации нет";
             if (Vaccination == true)
                 b = $"привита";

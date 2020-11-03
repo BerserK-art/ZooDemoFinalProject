@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel;
 using Zoo;
 
 namespace ZooWpf
 {
+    //надо доделать логику добавления, получения, редактирования и удаления животных
     class MainWindowViewModel : INotifyPropertyChanged
     {
         private IAnimal[] animals;

@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using Zoo.Animals;
 using Zoo.Interfeces;
-
+//Неймспейс должен совпадать с путём к папке
 namespace Zoo.Parsers
 {
     public class ToStorkParser : IParser

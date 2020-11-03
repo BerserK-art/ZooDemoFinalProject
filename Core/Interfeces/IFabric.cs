@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Zoo;
-
+﻿using Zoo;
+//всё отлично
 namespace Core.Interfeces
 {
     public interface IFabric

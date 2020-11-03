@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+//Неймспейс должен совпадать с путём к папке
 namespace Zoo.Animals
 {
     public class Tiger : IBist
@@ -27,6 +25,7 @@ namespace Zoo.Animals
 
         public string MakeSound()
         {
+            //лучше всего использовать стрелочную функцию
             return "рыг";   
         }
 
@@ -41,6 +40,7 @@ namespace Zoo.Animals
         }
         public override string ToString()
         {
+            //лучше всего использовать стрелочную функцию
             return $"Tiger,{Area},{FoundingTime},{Height},{Weight},{EyeColor}\n";
         }
     }

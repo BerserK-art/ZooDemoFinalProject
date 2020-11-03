@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿//Неймспейс должен совпадать с путём к папке
 namespace Zoo.Animals
 {
     public class Chiken : Bird
@@ -13,6 +10,7 @@ namespace Zoo.Animals
 
         public override string MakeSound()
         {
+            //лучше всего использовать стрелочную функцию
             return "Куд-куда";
         }
 
@@ -26,6 +24,7 @@ namespace Zoo.Animals
         }
         public override string ToString()
         {
+            //лучше всего использовать стрелочную функцию
             return $"Chiken,{FlyHeight},{Height},{Weight},{EyeColor}\n";
         }
     }

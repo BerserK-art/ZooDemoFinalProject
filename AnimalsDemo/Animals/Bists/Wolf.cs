@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+//Неймспейс должен совпадать с путём к папке
 namespace Zoo.Animals
 {
     public class Wolf : IBist
@@ -28,14 +26,16 @@ namespace Zoo.Animals
 
         public string MakeSound()
         {
+            //лучше всего использовать стрелочную функцию
             return "ауф";
         }
 
         public string PrintInfo()
         {
             string a = "";
+            //лучше тут использовать тернаный оператор
                 if(Alpha==true)
-            a = "\nвожак стаи";
+                    a = "\nвожак стаи";
             return $"Волк :\n" +
                $"время нахождения {FoundingTime}\n" +
                $"зона обитания {Area}\n" +

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Zoo
 {
@@ -13,6 +12,7 @@ namespace Zoo
         }
         public bool IsThere(string command)
         {
+            //тут нужно импользовать просто стрелочную функцию
             if (_commands.ContainsKey(command))
             {
                 return true;

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿//Неймспейс должен совпадать с путём к папке
 namespace Zoo.Animals
 {
     public abstract class Bird : IAnimal
@@ -22,6 +19,7 @@ namespace Zoo.Animals
         public abstract string PrintInfo();
         public string Fly()
         {
+            //лучше всего использовать стрелочную функцию
             return $"Я лечу на {FlyHeight} метрах";
         }
 

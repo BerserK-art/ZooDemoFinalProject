@@ -9,6 +9,7 @@ namespace Services.Fabrics
 {
     public class GetStork : IFabric
     {
+        //здесь бы не помешал базовый класс AbstractFacroty для избежания дублирования кода этих полей
         private IGetService _getService;
         private INotifyService _notifyService;
         public GetStork(IGetService getService, INotifyService notifyService)
@@ -19,6 +20,7 @@ namespace Services.Fabrics
 
         public IAnimal GetAnimal()
         {
+            //лучше всё это вычитывать в парсерах или другом месте
             _getService.Write("введите высоту полёта:");
             int flyHeight = int.Parse(_notifyService.ReadText());
             _getService.Write("введите размер:");
@@ -29,6 +31,7 @@ namespace Services.Fabrics
             string eyecolor = _notifyService.ReadText();
             return new Stork(flyHeight, Height, Weight, eyecolor);
         }
+        //лучше всего использовать стрелочную функцию
         public override string ToString()
         {
             return "Аист";

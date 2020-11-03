@@ -9,6 +9,7 @@ namespace Services.Fabrics
 {
     public class GetDog : IFabric
     {
+        //здесь бы не помешал базовый класс AbstractFacroty для избежания дублирования кода этих полей
         private IGetService _getService;
         private INotifyService _notifyService;
         public GetDog(IGetService getService, INotifyService notifyService)
@@ -19,6 +20,7 @@ namespace Services.Fabrics
 
         public IAnimal GetAnimal()
         {
+            //это всё лучше вычитывать в парсерах или другом месте
             _getService.Write("Введите кличку");
             string Name = _notifyService.ReadText();
             _getService.Write("Введите пароду");
@@ -45,6 +47,7 @@ namespace Services.Fabrics
         }
         public override string ToString()
         {
+            //лучше всего использовать стрелочную функцию
             return "Собака";
         }
     }

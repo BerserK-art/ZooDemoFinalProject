@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+//Неймспейс должен совпадать с путём к папке
 namespace Zoo.Animals
 {
     public class Cat : IPet
@@ -21,6 +19,7 @@ namespace Zoo.Animals
         }
         public override string ToString()
         {
+            //лучше использовать стрелочную функцию
             return $"Cat,{Name},{Breed},{Vaccination},{WoolColor},{BirthDay},{Height},{Weight},{EyeColor},{Wool}\n";
         }
 
@@ -43,21 +42,25 @@ namespace Zoo.Animals
 
         public string Caress()
         {
+            //лучше использовать стрелочную функцию
             return "мурлычет";
         }
 
         public string MakeSound()
         {
+            //лучше использовать стрелочную функцию
             return "мяу";
         }
 
         public string PrintInfo()
         {
             string a = "Шерсти нет";
+            //лучше использовать тернарный оператор
             if (Wool == true)
                 a = $"Цвет шерсти: {WoolColor}";
 
             string b = "вакцинации нет";
+            //лучше использовать тернарный оператор
             if (Vaccination == true)
                 b = $"привита";
 

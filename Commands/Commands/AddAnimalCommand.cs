@@ -1,13 +1,11 @@
 ﻿using Services.Fabrics;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using Zoo.Animals;
-
+//Неймспейс должен совпадать с путём к папке
 namespace Zoo.Coomands
 {
-   public class AddAnimalCommand : ICommand
+    //Стоило сделать класс CommandBase, чтобы избежать дублирование кода с присваением зоопарка, а зоопарк сделать protected полем
+    public class AddAnimalCommand : ICommand
     {
+        //приватные моля, именяемые только в конструкторе можно делать readonly
         private ZooPark _zoo;
         private AnimalFabric _animalFabric; 
         public AddAnimalCommand(ZooPark zoo,AnimalFabric animalFabric)

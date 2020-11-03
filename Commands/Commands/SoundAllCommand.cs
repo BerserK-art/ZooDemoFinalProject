@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿//Неймспейс должен совпадать с путём к папке
 namespace Zoo.Commands
 {
+    //Стоило сделать класс CommandBase, чтобы избежать дублирование кода с присваением зоопарка,
+    //а зоопарк сделать protected полем и proetected конструктор
     public class SoundAllCommand : ICommand
     {
         private ZooPark _zoo;
@@ -15,6 +14,7 @@ namespace Zoo.Commands
 
         public string Execute()
         {
+            //лучше было воспользоваться стрелочной функцией
             return _zoo.AllSounds();
         }
     }

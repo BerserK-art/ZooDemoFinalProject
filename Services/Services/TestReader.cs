@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Zoo.Animals;
-
+//Неймспейс должен совпадать с путём к папке
 namespace Zoo.Srvices
 {
     public class TestReader : IReaderService
@@ -10,6 +10,7 @@ namespace Zoo.Srvices
 
         public List<IAnimal> Read()
         {
+            //лучше всего использовать стрелочную функцию
             List<IAnimal> animals = new List<IAnimal>()
             {
                 new Chiken(3,40,5,"Black"),

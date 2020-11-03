@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿//Неймспейс должен совпадать с путём к папке
 namespace Zoo.Animals
 {
-   public  class Stork : Bird
+    public  class Stork : Bird
     {
         public Stork(int flyHeaight, double height, double weight, string eyeColor) : base(flyHeaight, height, weight, eyeColor)
         {
@@ -12,6 +9,7 @@ namespace Zoo.Animals
 
         public override string MakeSound()
         {
+            //лучше всего использовать стрелочную функцию
             return "Щёлк";
         }
 
@@ -25,6 +23,7 @@ namespace Zoo.Animals
         }
         public override string ToString()
         {
+            //лучше всего использовать стрелочную функцию
             return $"Stork,{FlyHeight},{Height},{Weight},{EyeColor}\n";
         }
     }

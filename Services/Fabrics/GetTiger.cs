@@ -1,7 +1,5 @@
 ﻿using Core.Interfeces;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using Zoo;
 using Zoo.Animals;
 
@@ -9,6 +7,7 @@ namespace Services.Fabrics
 {
     public class GetTiger : IFabric
     {
+        //здесь бы не помешал базовый класс AbstractFacroty для избежания дублирования кода этих полей
         private IGetService _getService;
         private INotifyService _notifyService;
         public GetTiger(IGetService getService, INotifyService notifyService)
@@ -16,7 +15,7 @@ namespace Services.Fabrics
             _getService = getService;
             _notifyService = notifyService;
         }
-
+        //лучше всё это вычитывать в парсерах или другом месте
         public IAnimal GetAnimal()
         {
             _getService.Write("Введите ареал:");
@@ -31,6 +30,7 @@ namespace Services.Fabrics
         }
         public override string ToString()
         {
+            //лучше всего использовать стрелочную функцию
             return "Тигр";
         }
     }

@@ -1,8 +1,6 @@
 ﻿using Core.Interfeces;
 using System;
-using System.Collections.Generic;
-using System.Text;
-
+//Это должно быть в консольном проекте, а не в кроссплатформенном коде
 namespace Services.NotifyServices
 {
     public class NotifyConsole : INotifyService

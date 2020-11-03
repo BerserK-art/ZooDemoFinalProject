@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿//Неймспейс должен совпадать с путём к папке
 namespace Zoo.Commands
 {
+    //Стоило сделать класс CommandBase, чтобы избежать дублирование кода с присваением зоопарка,
+    //а зоопарк сделать protected полем и proetected конструктор
     public class GetZooCommand : ICommand
     {
         private ZooPark _zoo;

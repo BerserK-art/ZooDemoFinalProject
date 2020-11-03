@@ -1,12 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using Zoo.Animals;
 using Zoo.Interfeces;
-
+//Неймспейс должен совпадать с путём к папке
 namespace Zoo.Parsers
 {
-   public  class ToDogParser : IParser
+    public  class ToDogParser : IParser
     {
         public IAnimal Parse(string[] str)
         {

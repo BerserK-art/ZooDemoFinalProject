@@ -9,11 +9,16 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZooWpf", "ZooWpf\ZooWpf.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnimalsDemo", "AnimalsDemo\AnimalsDemo.csproj", "{2BCE0816-1BE2-4BEC-BB6B-AFD54FDACCCD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{C95DC408-2A1F-44F5-8613-9C240C81A8C7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core", "Core\Core.csproj", "{C95DC408-2A1F-44F5-8613-9C240C81A8C7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Services\Services.csproj", "{5787FFD5-CACD-495E-9961-C5B241D3F6C5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Services", "Services\Services.csproj", "{5787FFD5-CACD-495E-9961-C5B241D3F6C5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Commands", "Commands\Commands.csproj", "{8C9AAB53-4B6D-4F94-A99C-8DAC2EFD2373}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Commands", "Commands\Commands.csproj", "{8C9AAB53-4B6D-4F94-A99C-8DAC2EFD2373}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{432AF854-3008-4C68-9E7F-E159917474DF}"
+	ProjectSection(SolutionItems) = preProject
+		Артём подготовка к курсовой.txt = Артём подготовка к курсовой.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
