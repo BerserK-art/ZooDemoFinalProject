@@ -1,23 +1,17 @@
-﻿using Services.Fabrics;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using Zoo.Animals;
+﻿using AnimalsDemo;
+using Commands.ModelsBase;
+using Services.Fabrics;
 
-namespace Zoo.Coomands
+namespace Commands.Coomands
 {
-   public class AddAnimalCommand : ICommand
+    public class AddAnimalCommand : CommandBase
     {
-        private ZooPark _zoo;
-        private AnimalFabric _animalFabric; 
-        public AddAnimalCommand(ZooPark zoo,AnimalFabric animalFabric)
+        private readonly AnimalFabric _animalFabric; 
+        public AddAnimalCommand(ZooPark zoo,AnimalFabric animalFabric) : base(zoo)
         {
-            _zoo = zoo;
             _animalFabric = animalFabric;
         }
-        
-
-        public string Execute()
+        public override string Execute()
         {          
             _zoo.Add(_animalFabric.GetIAnimal());
             return "Животное добавлено";

@@ -1,4 +1,4 @@
-﻿namespace Zoo
+﻿namespace Core.Interfeces
 {
     public interface IAnimal
     {
@@ -7,6 +7,5 @@
         string EyeColor { get; }
         string MakeSound();
         string PrintInfo();
-        string ToString();
     }
 }

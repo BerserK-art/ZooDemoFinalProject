@@ -1,23 +1,17 @@
-﻿using Core.Interfeces;
+﻿using AnimalsDemo.Animals.Pets;
+using Core.Interfeces;
 using System;
-using System.Collections.Generic;
-using System.Text;
-using Zoo;
-using Zoo.Animals;
+
 
 namespace Services.Fabrics
 {
-    public class GetDog : IFabric
+    public class GetDog : FabricBase
     {
-        private IGetService _getService;
-        private INotifyService _notifyService;
-        public GetDog(IGetService getService, INotifyService notifyService)
+        public GetDog(IGetService getService, INotifyService notifyService) : base(getService, notifyService)
         {
-            _getService = getService;
-            _notifyService = notifyService;
         }
 
-        public IAnimal GetAnimal()
+        public override IAnimal GetAnimal()
         {
             _getService.Write("Введите кличку");
             string Name = _notifyService.ReadText();
@@ -25,9 +19,6 @@ namespace Services.Fabrics
             string Breed = _notifyService.ReadText();
             _getService.Write("Привита (y/n)");
             string vac = _notifyService.ReadText();
-            bool vacBool = false;
-            if (vac == "y")
-                vacBool = true;
             _getService.Write("Введите цвет шерсти");
             string WoolColor = _notifyService.ReadText();
             _getService.Write("введите размер:");
@@ -38,14 +29,9 @@ namespace Services.Fabrics
             string eyecolor = _notifyService.ReadText();
             _getService.Write("Есть дрессировка? (y/n)");
             string Training = _notifyService.ReadText();
-            bool TrainingBool = false;
-            if (Training == "y")
-                TrainingBool = true;
-            return new Dog(Name, Breed, vacBool, WoolColor, DateTime.Today, Height, Weight, eyecolor, TrainingBool);
+            return new Dog(Name, Breed, (vac == "y" ? true : false), WoolColor, DateTime.Today, Height, Weight, eyecolor, (Training == "y" ? true : false));
         }
-        public override string ToString()
-        {
-            return "Собака";
-        }
+        public override string ToString()=> "Собака";
+
     }
 }

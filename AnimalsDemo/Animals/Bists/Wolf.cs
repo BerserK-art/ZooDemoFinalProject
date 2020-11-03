@@ -1,8 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace Zoo.Animals
+
+namespace AnimalsDemo.Animals.Bists
 {
     public class Wolf : IBist
     {
@@ -26,10 +25,8 @@ namespace Zoo.Animals
         public string EyeColor { get; }
         public bool Alpha{get; }
 
-        public string MakeSound()
-        {
-            return "ауф";
-        }
+        public string MakeSound()=>  "ауф";
+
 
         public string PrintInfo()
         {
@@ -44,9 +41,6 @@ namespace Zoo.Animals
                $"цвет глаз: {EyeColor}"+
                a;
         }
-        public override string ToString()
-        {
-            return $"Wolf,{Area},{FoundingTime},{Height},{Weight},{EyeColor},{Alpha}\n";
-        }
+        public override string ToString()=> $"Wolf,{Area},{FoundingTime},{Height},{Weight},{EyeColor},{Alpha}\n";
     }
 }

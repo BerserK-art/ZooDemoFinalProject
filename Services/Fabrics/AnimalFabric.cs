@@ -1,8 +1,7 @@
 ﻿using Core.Interfeces;
 using System;
 using System.Collections.Generic;
-using System.Text;
-using Zoo;
+using System.Linq;
 
 namespace Services.Fabrics
 {
@@ -10,23 +9,17 @@ namespace Services.Fabrics
     {
         private IGetService _getService;
         private INotifyService _notifyService;
-        private  Dictionary<string, IFabric> _dict;
-        public AnimalFabric(Dictionary<string, IFabric> dict,IGetService getService,INotifyService notifyService)
+        private  IDictionary<string, IFabric> _dict;
+        public AnimalFabric(IDictionary<string, IFabric> dict,IGetService getService,INotifyService notifyService)
         {
             _dict = dict;
             _getService = getService;
             _notifyService = notifyService;
         }
-        public  void Menu()
-        {
-            foreach(var el in _dict)
-            {
-                _getService.Write($"{el.Key} - {el.Value.ToString()}");
-            }
-        }
         public IAnimal GetIAnimal()
         {
-            Menu();
+            _getService.Write("Выберите животное:");
+            _dict.ToList().ForEach(el => _getService.Write($"{el.Key} - {el.Value.ToString()}"));
             string str = _notifyService.ReadText();
             if (!_dict.ContainsKey(str))
                 throw new InvalidOperationException("there is no this animal");

@@ -1,21 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using AnimalsDemo;
+using Commands.ModelsBase;
 
-namespace Zoo.Commands
+namespace Commands.Commands
 {
-    public class SoundAllCommand : ICommand
+    public class SoundAllCommand : CommandBase
     {
-        private ZooPark _zoo;
-
-        public SoundAllCommand(ZooPark zoo)
+        public SoundAllCommand(ZooPark zoo) : base(zoo)
         {
-            _zoo = zoo;
         }
 
-        public string Execute()
-        {
-            return _zoo.AllSounds();
-        }
+        public override string Execute()=> _zoo.AllSounds();
+
     }
 }

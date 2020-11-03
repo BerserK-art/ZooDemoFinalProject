@@ -1,20 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using AnimalsDemo;
+using Commands.ModelsBase;
 
-namespace Zoo.Commands
+namespace Commands.Coomands
 {
-    public class InfoAllComand : ICommand
+    public class InfoAllComand : CommandBase
     {
-        private ZooPark _zoo;
-        public InfoAllComand(ZooPark zoo)
+        public InfoAllComand(ZooPark zoo) : base(zoo)
         {
-            _zoo = zoo;
         }
 
-        public string Execute()
-        {
-            return _zoo.PrintAll();
-        }
+        public override string Execute()=> _zoo.PrintAll();
+
     }
 }

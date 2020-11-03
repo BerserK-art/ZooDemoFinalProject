@@ -1,25 +1,24 @@
-﻿using System.Collections.Generic;
+﻿using Core.Interfeces;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Zoo
 {
     public class FileReaderService : IReaderService
     {
-        private string _URL;
+        private string _url;
         private readonly ToAnimalParser _animalParser;
-        public FileReaderService(string URL, ToAnimalParser animalParser)
+        public FileReaderService(string url, ToAnimalParser animalParser)
         {
-            _URL = URL;
+            _url = url;
             _animalParser = animalParser;
         }
 
         public List<IAnimal> Read()
         {
-            string[] lines = System.IO.File.ReadAllLines(_URL);
+            string[] lines = System.IO.File.ReadAllLines(_url);
             List<IAnimal> animals = new List<IAnimal>();
-            foreach(var el in lines)
-            {
-                animals.Add(_animalParser.ToAnimal(el));
-            }
+            lines.ToList().ForEach(el => animals.Add(_animalParser.ToAnimal(el)));
             return animals;
         }
     }

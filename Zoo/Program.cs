@@ -1,14 +1,12 @@
-﻿using Core.Interfeces;
+﻿using AnimalsDemo;
+using Commands.Commands;
+using Commands.Coomands;
+using Core.Interfeces;
 using Services.Fabrics;
-using Services.NotifyServices;
 using System;
 using System.Collections.Generic;
-using Zoo.Animals;
-using Zoo.Commands;
-using Zoo.Coomands;
-using Zoo.Interfeces;
+using Zoo.NotifyServices;
 using Zoo.Parsers;
-using Zoo.Srvices;
 
 namespace Zoo
 {
@@ -32,8 +30,10 @@ namespace Zoo
             try
             {
                 string url = @"ZooInfo.txt";
+                ZooPark zoo = new ZooPark();
                 IGetService getService = new GetConsole();
                 INotifyService notifyService = new NotifyConsole();
+
                 Dictionary<string, IParser> dict = new Dictionary<string, IParser>();
                 dict.Add("Chiken", new ToChikenParser());
                 dict.Add("Stork", new ToStorkParser());
@@ -41,6 +41,8 @@ namespace Zoo
                 dict.Add("Tiger", new ToTigerParser());
                 dict.Add("Cat", new ToCatParser());
                 dict.Add("Dog", new ToDogParser());
+                ToAnimalParser toAnimalParser = new ToAnimalParser(dict);                      
+
 
                 Dictionary<string, IFabric> fabrics = new Dictionary<string, IFabric>();
                 fabrics.Add("1", new GetChiken(getService, notifyService));
@@ -49,8 +51,7 @@ namespace Zoo
                 fabrics.Add("4", new GetTiger(getService, notifyService));
                 fabrics.Add("5", new GetCat(getService, notifyService));
                 fabrics.Add("6", new GetDog(getService, notifyService));
-                ToAnimalParser toAnimalParser = new ToAnimalParser(dict);                      
-                ZooPark zoo = new ZooPark();
+
                 Dictionary<string, ICommand> commands = new Dictionary<string, ICommand>();
                 commands.Add("stop", new StopCommand());
                 commands.Add("1", new AddAnimalCommand(zoo, new AnimalFabric(fabrics,getService,notifyService)));
@@ -62,6 +63,7 @@ namespace Zoo
                 commands.Add("7", new GetZooCommand(zoo,new FileReaderService(url, toAnimalParser)));
                 commands.Add("8", new SaveCommand(zoo,new FileWriterService(url)));
                 Menu menu = new Menu(commands);
+
                 string variant = "";
                 menu.Choose("7");
                 do

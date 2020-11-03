@@ -1,23 +1,16 @@
-﻿using Core.Interfeces;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using AnimalsDemo;
+using Commands.ModelsBase;
+using Core.Interfeces;
 
-namespace Zoo.Commands
+namespace Commands.Coomands
 {
-    public class DeleteCommand : ICommand
+    public class DeleteCommand : NotifyCommandBase
     {
-        private ZooPark _zoo;
-        private INotifyService _notifyService;
-        private IGetService _getService;
-        public DeleteCommand(ZooPark zoo,INotifyService notifyService,IGetService getService)
+        public DeleteCommand(ZooPark zoo, INotifyService notifyService, IGetService getService) : base(zoo, notifyService, getService)
         {
-            _zoo = zoo;
-            _notifyService = notifyService;
-            _getService = getService;
         }
 
-        public string Execute()
+        public override string Execute()
         {
             _getService.Write("введите индекс");
             int index = int.Parse(_notifyService.ReadText());

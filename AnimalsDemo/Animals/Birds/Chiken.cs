@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Zoo.Animals
+﻿
+namespace AnimalsDemo.Animals.Birds
 {
     public class Chiken : Bird
     {
@@ -11,22 +8,14 @@ namespace Zoo.Animals
         {
         }
 
-        public override string MakeSound()
-        {
-            return "Куд-куда";
-        }
-
-        public override string PrintInfo()
-        {
-            return $"Курица :\n" +
+        public override string MakeSound() => "Куд-куда";
+        public override string PrintInfo()=>$"Курица :\n" +
                 $"высота полёта: {FlyHeight}\n" +
                 $"размер {Height}см\n" +
                 $"вес {Weight}кг\n" +
                 $"цвет глаз: {EyeColor}";
-        }
-        public override string ToString()
-        {
-            return $"Chiken,{FlyHeight},{Height},{Weight},{EyeColor}\n";
-        }
+        
+        public override string ToString()=> $"Chiken,{FlyHeight},{Height},{Weight},{EyeColor}\n";
+       
     }
 }

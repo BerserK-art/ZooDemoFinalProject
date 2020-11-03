@@ -1,21 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using AnimalsDemo;
+using Commands.ModelsBase;
+using Core.Interfeces;
 
-namespace Zoo.Commands
+namespace Commands.Coomands
 {
-    public class SaveCommand : ICommand
+    public class SaveCommand : CommandBase
     {
-        private IWriterService _writerService;
-        private ZooPark _zoo;
+        private readonly IWriterService _writerService;
 
-        public SaveCommand(ZooPark zoo,IWriterService writerService)
+        public SaveCommand(ZooPark zoo,IWriterService writerService) : base(zoo)
         {
-            _zoo = zoo;
             _writerService = writerService;
         }
 
-        public string Execute()
+        public override string Execute()
         {
             _zoo.SaveToFile(_writerService);
             return "Сохранено";

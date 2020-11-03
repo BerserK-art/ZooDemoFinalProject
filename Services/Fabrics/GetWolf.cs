@@ -1,23 +1,17 @@
-﻿using Core.Interfeces;
+﻿using AnimalsDemo.Animals.Bists;
+using Core.Interfeces;
 using System;
-using System.Collections.Generic;
-using System.Text;
-using Zoo;
-using Zoo.Animals;
+
 
 namespace Services.Fabrics
 {
-    public class GetWolf : IFabric
+    public class GetWolf : FabricBase
     {
-        private IGetService _getService;
-        private INotifyService _notifyService;
-        public GetWolf(IGetService getService, INotifyService notifyService)
+        public GetWolf(IGetService getService, INotifyService notifyService) : base(getService, notifyService)
         {
-            _getService = getService;
-            _notifyService = notifyService;
         }
 
-        public IAnimal GetAnimal()
+        public override IAnimal GetAnimal()
         {
             _getService.Write("Введите ареал:");
             string Area = _notifyService.ReadText();
@@ -29,14 +23,8 @@ namespace Services.Fabrics
             string eyecolor = _notifyService.ReadText();
             _getService.Write("Вожак стаи? (y/n)");
             string Alpha = _notifyService.ReadText();
-            bool AlphaBool = false;
-            if (Alpha == "y")
-                AlphaBool = true;
-            return new Wolf(Area, DateTime.Now, Height, Weight, eyecolor,AlphaBool);
+            return new Wolf(Area, DateTime.Now, Height, Weight, eyecolor, (Alpha == "y" ? true : false));
         }
-        public override string ToString()
-        {
-            return "Волк";
-        }
+        public override string ToString()=> "Волк";
     }
 }

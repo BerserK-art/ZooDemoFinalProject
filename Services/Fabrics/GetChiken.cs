@@ -1,23 +1,16 @@
-﻿using Core.Interfeces;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using Zoo;
-using Zoo.Animals;
+﻿using AnimalsDemo.Animals.Birds;
+using Core.Interfeces;
+
 
 namespace Services.Fabrics
 {
-    public class GetChiken : IFabric
+    public class GetChiken : FabricBase
     {
-        private IGetService _getService;
-        private INotifyService _notifyService;
-        public GetChiken(IGetService getService, INotifyService notifyService)
+        public GetChiken(IGetService getService, INotifyService notifyService) : base(getService, notifyService)
         {
-            _getService = getService;
-            _notifyService = notifyService;
         }
 
-        public IAnimal GetAnimal()
+        public override IAnimal GetAnimal()
         {
             _getService.Write("введите высоту полёта:");
             int flyHeight = int.Parse(_notifyService.ReadText());
@@ -29,9 +22,7 @@ namespace Services.Fabrics
             string eyecolor = _notifyService.ReadText();
             return new Chiken(flyHeight,Height,Weight,eyecolor);
         }
-        public override string ToString()
-        {
-            return "Курица";
-        }
+        public override string ToString()=>"Курица";
+
     }
 }

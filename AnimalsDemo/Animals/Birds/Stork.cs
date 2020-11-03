@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Zoo.Animals
+﻿namespace AnimalsDemo.Animals.Birds
 {
    public  class Stork : Bird
     {
@@ -10,22 +6,14 @@ namespace Zoo.Animals
         {
         }
 
-        public override string MakeSound()
-        {
-            return "Щёлк";
-        }
-
-        public override string PrintInfo()
-        {
-            return $"Аист :\n" +
+        public override string MakeSound()=> "Щёлк";   
+        public override string PrintInfo()=> $"Аист :\n" +
                 $"высота полёта: {FlyHeight}\n" +
                 $"размер {Height}см\n" +
                 $"вес {Weight}кг\n" +
                 $"цвет глаз: {EyeColor}";
-        }
-        public override string ToString()
-        {
-            return $"Stork,{FlyHeight},{Height},{Weight},{EyeColor}\n";
-        }
+
+        public override string ToString()=> $"Stork,{FlyHeight},{Height},{Weight},{EyeColor}\n";
+        
     }
 }

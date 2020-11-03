@@ -1,4 +1,4 @@
-﻿using System;
+﻿using Core.Interfeces;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
@@ -7,30 +7,24 @@ namespace Zoo
 {
     public class FileWriterService : IWriterService
     {
-        private string _URL;
-        public FileWriterService(string URL)
+        private string _url;
+        public FileWriterService(string url)
         {
-            _URL = URL;
+            _url = url;
         }
-
         public void Write(List<IAnimal> animals)
         {
-            string tmp="";
-            foreach(var el in animals)
+            StringBuilder stringBuilder = new StringBuilder();
+            animals.ForEach(el => stringBuilder.Append(el.ToString()));
+            if (File.Exists(_url))
             {
-                tmp += el.ToString();
+                File.Delete(_url);
             }
-            if (File.Exists(_URL))
+            using (FileStream file = File.Create(_url))
             {
-                File.Delete(_URL);
-            }
-            using (FileStream file = File.Create(_URL))
-            {
-                byte[] info = new UTF8Encoding(true).GetBytes(tmp);
+                byte[] info = new UTF8Encoding(true).GetBytes(stringBuilder.ToString());
                 file.Write(info, 0, info.Length);
             }
-            
-            
         }
     }
 }

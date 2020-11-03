@@ -1,8 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Text;
 
-namespace Zoo.Animals
+namespace AnimalsDemo.Animals.Pets
 {
     public class Cat : IPet
     {
@@ -19,10 +18,8 @@ namespace Zoo.Animals
             EyeColor = eyeColor;
             Wool = wool;
         }
-        public override string ToString()
-        {
-            return $"Cat,{Name},{Breed},{Vaccination},{WoolColor},{BirthDay},{Height},{Weight},{EyeColor},{Wool}\n";
-        }
+        public override string ToString()=> $"Cat,{Name},{Breed},{Vaccination},{WoolColor},{BirthDay},{Height},{Weight},{EyeColor},{Wool}\n";
+
 
         public string Name { get;  }
 
@@ -41,31 +38,23 @@ namespace Zoo.Animals
         public string EyeColor { get;  }
         public bool Wool { get; }
 
-        public string Caress()
-        {
-            return "мурлычет";
-        }
+        public string Caress()=> "мурлычет";
 
-        public string MakeSound()
-        {
-            return "мяу";
-        }
+
+        public string MakeSound()=>"мяу";
+
 
         public string PrintInfo()
         {
-            string a = "Шерсти нет";
-            if (Wool == true)
-                a = $"Цвет шерсти: {WoolColor}";
+            StringBuilder stringBuilder = new StringBuilder();
+            stringBuilder.Append(Wool==true ?  $"Цвет шерсти: {WoolColor}\n" : "Шерсти нет\n");
+            stringBuilder.Append(Vaccination == true ? "привита\n" : "вакцинации нет\n");
 
-            string b = "вакцинации нет";
-            if (Vaccination == true)
-                b = $"привита";
 
             return $"Кошка {Name}:\n" +
                 $"порода {Breed}\n" +
                $"день рождения: {BirthDay}\n" +
-               $"{a}\n" +
-               $"{b}\n" +
+               stringBuilder.ToString() +
                $"размер {Height}см\n" +
                $"вес {Weight}кг\n" +
                $"цвет глаз: {EyeColor}";

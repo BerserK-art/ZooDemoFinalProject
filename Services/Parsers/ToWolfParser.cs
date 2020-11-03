@@ -1,6 +1,7 @@
-﻿using System;
-using Zoo.Animals;
-using Zoo.Interfeces;
+﻿using AnimalsDemo.Animals.Bists;
+using Core.Interfeces;
+using System;
+
 
 namespace Zoo.Parsers
 {

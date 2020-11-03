@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Core.Interfeces;
+using System;
 
-namespace Zoo
+
+namespace AnimalsDemo.Animals.Bists
 {
    public interface IBist : IAnimal
     {

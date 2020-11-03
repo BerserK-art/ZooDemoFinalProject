@@ -100,9 +100,17 @@
       <Project>{2BCE0816-1BE2-4BEC-BB6B-AFD54FDACCCD}</Project>
       <Name>AnimalsDemo</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Commands\Commands.csproj">
+      <Project>{8c9aab53-4b6d-4f94-a99c-8dac2efd2373}</Project>
+      <Name>Commands</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Core\Core.csproj">
       <Project>{c95dc408-2a1f-44f5-8613-9c240c81a8c7}</Project>
       <Name>Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Services\Services.csproj">
+      <Project>{5787ffd5-cacd-495e-9961-c5b241d3f6c5}</Project>
+      <Name>Services</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

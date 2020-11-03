@@ -1,6 +1,7 @@
-﻿using System;
+﻿using Core.Interfeces;
+using System;
 
-namespace Zoo
+namespace AnimalsDemo.Animals.Pets
 {
     public interface IPet : IAnimal
     {

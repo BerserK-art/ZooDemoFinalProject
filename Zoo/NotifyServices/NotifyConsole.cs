@@ -1,9 +1,8 @@
 ﻿using Core.Interfeces;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace Services.NotifyServices
+
+namespace Zoo.NotifyServices
 {
     public class NotifyConsole : INotifyService
     {

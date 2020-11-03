@@ -1,6 +1,10 @@
-﻿using System;
+﻿using AnimalsDemo.Animals.Birds;
+using AnimalsDemo.Animals.Bists;
+using AnimalsDemo.Animals.Pets;
+using Core.Interfeces;
+using System;
 using System.Collections.Generic;
-using Zoo.Animals;
+
 
 namespace Zoo.Srvices
 {

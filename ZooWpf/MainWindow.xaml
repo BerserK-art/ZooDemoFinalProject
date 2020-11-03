@@ -6,17 +6,20 @@
         xmlns:local="clr-namespace:ZooWpf"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    <Window.DataContext>
+        <local:MainWindowViewModel/>
+    </Window.DataContext>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="8*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <DataGrid Grid.Row="0">
+        <DataGrid Grid.Row="0" ItemsSource="{Binding Animals}" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Животное:" Width="*"/>
-                <DataGridTextColumn Header="Цвет глаз:" Width="*"/>
-                <DataGridTextColumn Header="Вес:" Width="*"/>
-                <DataGridTextColumn Header="Размер:" Width="*"/>
+                <DataGridTextColumn Header="Животное:" Width="*" Binding="{Binding ElementName=GetType() }"/>
+                <DataGridTextColumn Header="Цвет глаз:" Width="*" Binding="{Binding EyeColor}"/>
+                <DataGridTextColumn Header="Вес:" Width="*" Binding="{Binding Weight}"/>
+                <DataGridTextColumn Header="Размер:" Width="*" Binding="{Binding Height}"/>
             </DataGrid.Columns>
             
         </DataGrid>

@@ -1,23 +1,17 @@
-﻿using Core.Interfeces;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using AnimalsDemo;
+using Commands.ModelsBase;
+using Core.Interfeces;
 
-namespace Zoo.Commands
+
+namespace Commands.Coomands
 {
-    public class InfoCommand : ICommand
+    public class InfoCommand : NotifyCommandBase
     {
-        private ZooPark _zoo;
-        private INotifyService _notifyService;
-        private IGetService _getService;
-        public InfoCommand(ZooPark zoo,INotifyService notifyService, IGetService getService)
+        public InfoCommand(ZooPark zoo, INotifyService notifyService, IGetService getService) : base(zoo, notifyService, getService)
         {
-            _zoo = zoo;
-        _notifyService = notifyService;
-            _getService = getService;
         }
 
-        public string Execute()
+        public override string Execute()
         {
             _getService.Write("введите индекс");
             int index = int.Parse(_notifyService.ReadText());

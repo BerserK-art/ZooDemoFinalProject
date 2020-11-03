@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Core.Interfeces;
 
-namespace Zoo.Animals
+namespace AnimalsDemo.Animals.Birds
 {
     public abstract class Bird : IAnimal
     {
@@ -20,10 +18,8 @@ namespace Zoo.Animals
 
         public abstract string MakeSound();
         public abstract string PrintInfo();
-        public string Fly()
-        {
-            return $"Я лечу на {FlyHeight} метрах";
-        }
+        public string Fly() => $"Я лечу на {FlyHeight} метрах";
+        
 
     }
 }

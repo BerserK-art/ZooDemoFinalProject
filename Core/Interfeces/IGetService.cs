@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Core.Interfeces
+﻿namespace Core.Interfeces
 {
     public interface IGetService
     {

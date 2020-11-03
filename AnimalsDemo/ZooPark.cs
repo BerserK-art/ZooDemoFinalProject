@@ -1,8 +1,8 @@
-﻿using System;
+﻿using Core.Interfeces;
+using System;
 using System.Collections.Generic;
-using System.Text;
 
-namespace Zoo
+namespace AnimalsDemo
 {
     public class ZooPark
     {

@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Core.Interfeces;
 
-namespace Zoo.Commands
+namespace Commands.Commands
 {
     public class StopCommand : ICommand
     {
-        public string Execute()
-        {
-            return null;
-        }
+        public string Execute()=> null;
+
     }
 }

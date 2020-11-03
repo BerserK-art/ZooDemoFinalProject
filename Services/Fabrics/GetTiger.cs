@@ -1,23 +1,17 @@
-﻿using Core.Interfeces;
+﻿using AnimalsDemo.Animals.Bists;
+using Core.Interfeces;
 using System;
-using System.Collections.Generic;
-using System.Text;
-using Zoo;
-using Zoo.Animals;
+
 
 namespace Services.Fabrics
 {
-    public class GetTiger : IFabric
+    public class GetTiger : FabricBase
     {
-        private IGetService _getService;
-        private INotifyService _notifyService;
-        public GetTiger(IGetService getService, INotifyService notifyService)
+        public GetTiger(IGetService getService, INotifyService notifyService) : base(getService, notifyService)
         {
-            _getService = getService;
-            _notifyService = notifyService;
         }
 
-        public IAnimal GetAnimal()
+        public override IAnimal GetAnimal()
         {
             _getService.Write("Введите ареал:");
             string Area = _notifyService.ReadText();
@@ -29,9 +23,6 @@ namespace Services.Fabrics
             string eyecolor = _notifyService.ReadText();
             return new Tiger(Area,DateTime.Now,Height,Weight,eyecolor);
         }
-        public override string ToString()
-        {
-            return "Тигр";
-        }
+        public override string ToString()=> "Тигр";
     }
 }

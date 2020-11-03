@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Zoo.Animals;
-using Zoo.Interfeces;
+﻿using AnimalsDemo.Animals.Birds;
+using Core.Interfeces;
+using System;
+
 
 namespace Zoo.Parsers
 {

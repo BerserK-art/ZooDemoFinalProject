@@ -1,8 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Text;
 
-namespace Zoo.Animals
+namespace AnimalsDemo.Animals.Pets
 {
     public class Dog : IPet
     {
@@ -19,10 +18,7 @@ namespace Zoo.Animals
             EyeColor = eyeColor;
             Training = training;
         }
-        public override string ToString()
-        {
-            return $"Dog,{Name},{Breed},{Vaccination},{WoolColor},{BirthDay},{Height},{Weight},{EyeColor},{Training}\n";
-        }
+        public override string ToString()=> $"Dog,{Name},{Breed},{Vaccination},{WoolColor},{BirthDay},{Height},{Weight},{EyeColor},{Training}\n";
 
         public string Name { get; }
 
@@ -41,31 +37,20 @@ namespace Zoo.Animals
         public string EyeColor { get; }
         public bool Training { get; private set; }
 
-        public string Caress()
-        {
-            return "Машет хвостиком";
-        }
+        public string Caress()=> "Машет хвостиком";
 
-        public string MakeSound()
-        {
-            return "Гав";
-        }
+        public string MakeSound()=>"Гав";
+
 
         public string PrintInfo()
         {
-            string a = "Тренировки нет";
-            if ( Training== true)
-                a = $"Тренирована";
-
-            string b = "вакцинации нет";
-            if (Vaccination == true)
-                b = $"привита";
-
+            StringBuilder stringBuilder = new StringBuilder();
+            stringBuilder.Append(Training== true ? "Тренирована\n" : "Тренировки нет\n");
+            stringBuilder.Append(Vaccination == true ? "привита\n" : "вакцинации нет\n");
             return $"Собака {Name}:\n" +
                 $"порода {Breed}\n" +
                $"день рождения: {BirthDay}\n" +
-               $"{a}\n" +
-               $"{b}\n" +
+               stringBuilder.ToString() +
                $"размер {Height}см\n" +
                $"вес {Weight}кг\n" +
                $"цвет глаз: {EyeColor}";
