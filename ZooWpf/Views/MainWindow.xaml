@@ -1,37 +1,40 @@
-﻿<Window x:Class="ZooWpf.MainWindow"
+﻿<Window x:Class="ZooWpf.Views.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ZooWpf"
+        xmlns:viewModels="clr-namespace:ZooWpf.ViewModels"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Window.DataContext>
-        <local:MainWindowViewModel/>
+        <viewModels:MainWindowViewModel/>
     </Window.DataContext>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="8*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <DataGrid Grid.Row="0" ItemsSource="{Binding Animals}" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False">
+        <DataGrid Grid.Row="0" ItemsSource="{Binding Animals}" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" SelectedItem="{Binding SelectedAnimal}">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Животное:" Width="*" Binding="{Binding ElementName=GetType() }"/>
+                <DataGridTextColumn Header="Животное:" Width="*" Binding="{Binding }"/>
                 <DataGridTextColumn Header="Цвет глаз:" Width="*" Binding="{Binding EyeColor}"/>
                 <DataGridTextColumn Header="Вес:" Width="*" Binding="{Binding Weight}"/>
                 <DataGridTextColumn Header="Размер:" Width="*" Binding="{Binding Height}"/>
             </DataGrid.Columns>
             
         </DataGrid>
-        <Grid Grid.Row="1">
+        <Grid Grid.Row="1" >
             <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Button Grid.Column="0">Добавить</Button>
-            <Button Grid.Column="1">удалить</Button>
-            <Button Grid.Column="2">Издать звук</Button>
+            <Button Grid.Column="1" Command="{Binding Delete, Mode=OneWay}">удалить</Button>
+            <Button Grid.Column="2" Command="{Binding Sound}">Издать звук</Button>
+            <Button Grid.Column="3">Редактировать</Button>
         </Grid>
     </Grid>
 </Window>

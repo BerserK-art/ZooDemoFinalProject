@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Zoo
+namespace Services.Parsers
 {
     public class ToAnimalParser
     {

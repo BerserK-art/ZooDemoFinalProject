@@ -7,9 +7,9 @@ namespace Services.Fabrics
 {
     public class AnimalFabric
     {
-        private IGetService _getService;
-        private INotifyService _notifyService;
-        private  IDictionary<string, IFabric> _dict;
+        private readonly IGetService _getService;
+        private readonly INotifyService _notifyService;
+        private readonly IDictionary<string, IFabric> _dict;
         public AnimalFabric(IDictionary<string, IFabric> dict,IGetService getService,INotifyService notifyService)
         {
             _dict = dict;

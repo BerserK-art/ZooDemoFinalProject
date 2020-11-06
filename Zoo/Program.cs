@@ -3,10 +3,12 @@ using Commands.Commands;
 using Commands.Coomands;
 using Core.Interfeces;
 using Services.Fabrics;
+using Services.Parsers;
+using Services.Services;
 using System;
 using System.Collections.Generic;
 using Zoo.NotifyServices;
-using Zoo.Parsers;
+ 
 
 namespace Zoo
 {
@@ -49,7 +51,7 @@ namespace Zoo
                 fabrics.Add("2", new GetStork(getService, notifyService));
                 fabrics.Add("3", new GetWolf(getService, notifyService));
                 fabrics.Add("4", new GetTiger(getService, notifyService));
-                fabrics.Add("5", new GetCat(getService, notifyService));
+                fabrics.Add("5", new GetCat());
                 fabrics.Add("6", new GetDog(getService, notifyService));
 
                 Dictionary<string, ICommand> commands = new Dictionary<string, ICommand>();

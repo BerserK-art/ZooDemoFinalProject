@@ -3,7 +3,7 @@ using Core.Interfeces;
 using System;
 
 
-namespace Zoo.Parsers
+namespace Services.Parsers
 {
     public class ToStorkParser : IParser
     {

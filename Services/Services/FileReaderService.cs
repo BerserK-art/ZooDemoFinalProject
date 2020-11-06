@@ -1,8 +1,9 @@
 ﻿using Core.Interfeces;
+using Services.Parsers;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Zoo
+namespace Services.Services
 {
     public class FileReaderService : IReaderService
     {

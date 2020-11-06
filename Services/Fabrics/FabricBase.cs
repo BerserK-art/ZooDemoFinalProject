@@ -4,8 +4,8 @@ namespace Services.Fabrics
 {
   public abstract  class FabricBase : IFabric
     {
-        protected IGetService _getService;
-        protected INotifyService _notifyService;
+        protected readonly IGetService _getService;
+        protected readonly INotifyService _notifyService;
 
        protected FabricBase(IGetService getService, INotifyService notifyService)
         {

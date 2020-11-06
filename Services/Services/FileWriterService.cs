@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
-namespace Zoo
+namespace Services.Services
 {
     public class FileWriterService : IWriterService
     {

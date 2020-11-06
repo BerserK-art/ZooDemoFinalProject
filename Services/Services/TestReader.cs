@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 
 
-namespace Zoo.Srvices
+namespace Services.Services
 {
     public class TestReader : IReaderService
     {
